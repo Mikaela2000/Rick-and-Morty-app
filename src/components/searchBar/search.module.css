@@ -1,0 +1,40 @@
+.contenedor {
+    position: absolute;
+    padding-top: 20px;
+    right: 10px;
+}
+
+.contenedor button {
+    background-color: rgba(26, 70, 70, 0.342);
+    color: aliceblue;
+    border-radius: 8px 8px 8px 8px;
+    border-color: rgba(252, 253, 255, 0.192);
+    height: 27px; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.contenedor button:hover {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    box-shadow: 0px 0px 10px 0px rgba(66, 64, 64, 0.5);
+    
+}
+
+.contenedor input {
+    background-color: #363333;
+    border-radius: 3px;
+    width: 400px;
+    height: 25px;
+
+    color: white;
+}
+
+.contenedor input:hover {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    
+    box-shadow: 0px 0px 20px 0px rgba(200, 193, 218, 0.425);
+   
+}

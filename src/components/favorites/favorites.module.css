@@ -1,0 +1,38 @@
+.contenedor {
+    position: relative;
+
+    width: 100%;
+    justify-content: space-evenly;
+    display: flex;
+
+    flex-wrap: wrap;
+    padding-top: 100px;
+    
+   
+
+}
+.contenedor2{
+   
+    width: 100%;
+    justify-content: space-evenly;
+    display: flex;
+
+    flex-wrap: wrap;
+    margin-top:30px;
+     position:absolute;
+    z-index: 1;
+}
+.select1 {
+    position: fixed;
+    left:400px; 
+     background-color: rgba(240, 248, 255, 0.479);
+     z-index: 2;
+}
+.select2 {
+    position: fixed;
+    left:800px; 
+    background-color: rgba(240, 248, 255, 0.479);
+    z-index: 2;
+
+
+}

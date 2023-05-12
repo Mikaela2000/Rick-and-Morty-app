@@ -1,0 +1,29 @@
+.contenedor {
+    width: 100%;
+    margin-top: 160px;
+    overflow: hidden;
+    background-color: rgba(66, 53, 95, 0.212);
+    color: rgb(29, 151, 151);
+    display: flex;
+    border-top:1px solid aliceblue;
+    border-bottom:1px solid aliceblue;
+}
+
+.contenedor2 {
+    margin-left: 250px;
+}
+
+.imagen {
+    position: absolute;
+    top: 120px;
+    right: 13px;
+    width: 400px;
+}
+
+
+img {
+    border-radius: 40% 0 0 40%;
+    border: solid 13px black;
+    width: 100%;
+    border-right: 0;
+}

@@ -1,0 +1,38 @@
+.contenedor {
+
+    width: 100%;
+    justify-content: space-evenly;
+    display: flex;
+
+    flex-wrap: wrap;
+    padding-top: 100px;
+   
+
+}
+
+.ramdom{
+     position: fixed;
+    /* position: absolute; */
+    border-radius: 50%;
+    right: 25px;
+    top:95px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    background-color: #05333377;
+    color:white;
+    border-color: rgba(239, 247, 231, 0.171);
+    cursor: pointer;
+    
+  
+
+}
+.ramdom:hover{
+    transition: 0.5s;
+    width: 33px;
+    height:33px;
+    background-color: rgb(8, 53, 53);
+    box-shadow: 10px 10px 20px 5px #0d444e;
+ 
+
+}

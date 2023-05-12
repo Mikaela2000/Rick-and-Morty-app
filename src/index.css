@@ -1,10 +1,28 @@
+
 body {
-  margin: 0;
+  
+   min-height: 100vh;
+   text-align: center;
+   
+   background-color: black;
+   
+   /* background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19643055883023.5996f8afa3a8f.gif'); */
+   background-image: url('https://usagif.com/wp-content/uploads/gifs/starfall-gif-74.gif');
+   /* background-image: url('https://fondosmil.com/fondo/27355.jpg'); */
+   
+
+  
+
+   background-size: 40%;
+   background-position: 50% 1px;
+
+  
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {

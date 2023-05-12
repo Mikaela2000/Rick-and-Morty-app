@@ -1,38 +1,30 @@
+
+
 .App {
-  text-align: center;
-}
+   height: 100%;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+   text-align: center;
+   
+   background-color: black;
+   
+   background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19643055883023.5996f8afa3a8f.gif');
+   /* background-image: url('https://usagif.com/wp-content/uploads/gifs/starfall-gif-74.gif'); */
+   /* background-image: url('https://fondosmil.com/fondo/27355.jpg'); */
+   
+   background-repeat: no-repeat;
+  
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+   background-size: 40%;
+   background-position: 50% 10px;
+   
+ 
 }
+/* .App:hover{
+   background-image: url('https://i.pinimg.com/originals/78/5f/ae/785faecb648be826e5a05bd85fce125d.jpg');
+   background-color: #000;
+   background-size: 100%;
+} */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* //0C0C12 */

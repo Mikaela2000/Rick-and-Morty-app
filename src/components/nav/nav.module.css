@@ -1,0 +1,47 @@
+.contenedor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background-color: rgb(0, 0, 0);
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19643055883023.5996f8afa3a8f.gif');
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position: 0;
+    border-bottom: solid 1px white;
+    color: #fff;
+    align-items: center;
+    z-index: 100;
+}
+
+.contenedor ul {
+    position:absolute;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    left: 280px;
+}
+
+.contenedor ul li {
+    display: inline-block;
+    line-height: 75px;
+    /* display: block; */
+    font-size: 18px;
+    padding: 0 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.contenedor ul li:hover {
+    transition: 6s;
+    /* background: #ecececab; */
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    /* color: black; */
+  text-decoration-color: rgb(90, 99, 96); /* opcional: cambiar el color del subrayado */
+  text-decoration-thickness: 2px; /* opcional: cambiar el grosor del subrayado */
+  text-underline-offset: 4px;
+}
+
+
