@@ -1,12 +1,12 @@
 import style from './card.module.css'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { addFav, removeFav } from '../../redux/actions'
 import { connect } from 'react-redux'
 import { useState, useEffect } from 'react'
 
 
 const Card = ({ id, name, status, species, gender, origin, image, onClose, addFav, removeFav, myFavorites }) => {
-
+   const { pathname } = useLocation();
    let colorFondo = '';
    if (status === 'Dead') {
       colorFondo = '#9e0606';
@@ -18,7 +18,7 @@ const Card = ({ id, name, status, species, gender, origin, image, onClose, addFa
    const [isFav, setIsFav] = useState(false);
 
    const handleFavorite = () => {
-      isFav ? removeFav(id) : addFav({id, name, status, species, gender, origin, image, onClose})
+      isFav ? removeFav(id) : addFav({ id, name, status, species, gender, origin, image, onClose })
       setIsFav(!isFav)
 
    }
@@ -33,12 +33,15 @@ const Card = ({ id, name, status, species, gender, origin, image, onClose, addFa
 
    return (
       <div id="id-card" className={style.contenedor}>
-          {
-          (
-            <button className={style.favorite}  onClick={handleFavorite}>{isFav ? '❤️' : '🤍'}</button>) 
-        }
+         {
+            (
+               <button className={style.favorite} onClick={handleFavorite}>{isFav ? '❤️' : '🤍'}</button>)
+         }
          <img className={style.imagen} src={`${image}`} alt='' />
-         <button  className={style.close} onClick={onClose}>X</button>
+         {pathname !== "/favorites" && (
+            <button className={style.close} onClick={onClose}>X</button>
+         )}
+         
          <h2 className={style.status} style={{ backgroundColor: colorFondo }}>{`${status}`}</h2>
          <div className={style.container}>
             <Link className={style.link} to={`/detail/${id}`} >
@@ -52,19 +55,19 @@ const Card = ({ id, name, status, species, gender, origin, image, onClose, addFa
 
    );
 }
-    
-const mapDispatchToProps = (dispatch)=>{
+
+const mapDispatchToProps = (dispatch) => {
    return {
-     addFav: (character) => dispatch(addFav(character)),
-     removeFav: (id) => dispatch(removeFav(id)),
+      addFav: (character) => dispatch(addFav(character)),
+      removeFav: (id) => dispatch(removeFav(id)),
    }
- };
- 
- const mapStateToProps =(state)=>{
-   return{
-     myFavorites: state.myFavorites
+};
+
+const mapStateToProps = (state) => {
+   return {
+      myFavorites: state.myFavorites
    }
- };
- 
- 
- export default connect(mapStateToProps,mapDispatchToProps)(Card)
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card)

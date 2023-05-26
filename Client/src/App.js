@@ -22,21 +22,23 @@ function App() {
    }, [access]);
 
 
-   const email = 'mikamonroy@gmail.com';
-   const password = '123456';
-
-   const onSearch = (id) => {
-      axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
-         const isDuplicate = characters.some((character) => character.id == data.id);
-         if (isDuplicate) {
-            window.alert('Ya ingresaste un personaje con este ID!');
-         } else if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
-         } else {
-            window.alert('¡No hay personajes con este ID!');
-         }
-      });
-   }
+   // const email = '';
+   // const password = '';
+   const onSearch = async (id) => {
+      try {
+        const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`);
+        const isDuplicate = characters.some((character) => character.id == data.id);
+        if (isDuplicate) {
+          window.alert('¡Ya ingresaste un personaje con este ID!');
+        } else if (data.name) {
+          setCharacters((oldChars) => [...oldChars, data]);
+        } else {
+          window.alert('¡No hay personajes con este ID!');
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
 const onClose = (id) => {
    setCharacters(
@@ -44,15 +46,22 @@ const onClose = (id) => {
    )
 };
 
-const login = (useData) => { //esta funcion es la que logra que access se vuelva verdadero
-   if (useData.email === email && useData.password === password) {
-      setAccess(true);
-      navigate('/home');
-   } else {
-      alert("Credenciales incorrectas")
+async function login(userData) {
+   const { email, password } = userData;
+   const URL = 'http://localhost:3001/rickandmorty/login/';
+
+   try {
+      const response = await axios.get(`${URL}?email=${email}&password=${password}`);
+      const { data } = response;
+      const { access } = data;
+      setAccess(data);
+      if (access) {
+         navigate('/home');
+      }
+   } catch (error) {
+      console.error(error);
    }
 }
-
 
 
 return (

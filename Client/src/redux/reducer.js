@@ -1,4 +1,4 @@
-import { orderCards } from "./actions";
+// import { orderCards } from "./actions";
 
 const initialState = {
   myFavorites: [],
@@ -7,32 +7,25 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_FAV":
-      return {
-        ...state,
-        allCharacters: [...state.allCharacters, action.payload],
-        myFavorites: [...state.myFavorites, action.payload],
+    case 'ADD_FAV':
+      return { ...state, 
+        myFavorites: action.payload, 
+        allCharacters: action.payload };
+
+    case 'REMOVE_FAV':
+      return { ...state, 
+        myFavorites: action.payload,
+        allCharacters:action.payload
+    };
       
-      };
-        
-    case "REMOVE_FAV":
-      return {
-        ...state,
-        myFavorites: state.myFavorites.filter(
-          (fav) => fav.id !== Number(action.payload)
-        ),
-            allCharacters: state.allCharacters.filter(
-      (char) => char.id !== Number(action.payload)
-    ),
-      };
     case "FILTER":
       const filterChars = state.allCharacters.filter(
         (char) => char.gender === action.payload)
-        console.log(filterChars)
+      console.log(filterChars)
       return {
         ...state,
         myFavorites: filterChars,
-      
+
       };
     case "ORDER":
 
