@@ -1,36 +1,29 @@
-const validate = (useData, errors, setErrors) => {
+const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+const regexPass = /\d/;
 
-const regex= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3})+$/;
-    //email
-    
-    if(!useData.email){
-        setErrors({...errors, email: 'Por favor completa este campo'})
-        console.log(errors)
-    }else if(useData.email.length>35){
-        setErrors({...errors, email: 'No puede superar los 35 caracteres'})
-    }else if(!regex.test(useData.email)){
-        setErrors({...errors, email: 'Email invalido'})
-        console.log(errors)
-    }else{
-        setErrors({...errors, email: ''})
+const validate = (inputs) => {
+    let errors = {}
+
+    if(!regexEmail.test(inputs.email)){
+        errors.email = "Invalid email."
     }
-    
 
-    //password
-
-    if(!/.*\d+.*/.test(useData.password)){
-        setErrors({...errors, password: 'La contraseña debe tener al menos un digito'});
-        console.log(errors)
-    }else if(useData.password.length>10){
-        setErrors({...errors, password: 'No puede superar los 10 caracteres'});
-    }else if(useData.password.length<6){
-    setErrors({...errors, password: 'No puede ser menor que los 6 caracteres'})
-    }else{
-        setErrors({...errors, password: ''})
+    if(!inputs.email){
+        errors.email = "Please, enter your email."
     }
-    
 
-};
+    if(inputs.email.length > 35){
+        errors.email = "Invalid email, it's too long."
+    }
 
-export default validate;
-    
+    if(inputs.password.length < 6 || inputs.password.length > 10){
+        errors.password = "Password length must be between 6 and 10 characters."
+    }
+
+    if(!regexPass.test(inputs.password)){
+        errors.password = "Password must contain one number at least."
+    }
+
+    return errors
+}
+export default validate

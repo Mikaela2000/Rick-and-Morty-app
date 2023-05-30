@@ -36,6 +36,9 @@
     margin-top: 50px;
 
 }
+.errorEmail{
+    margin: 5px;
+}
 
 form {
     display: flex;

@@ -9,37 +9,27 @@ const Form = ({login}) => {
         password: '',
     });
 
-    const [errors, setErrors] = useState({
-        email: '',
-        password: '',
-    })
+    const [errors, setErrors] = useState({})
 
     const handleChange = (event) => {
-        const property= event.target.name //de este imput sacamos el name
-        const value= event.target.value
+        setUseData({
+            ...useData,
+            [event.target.name]: event.target.value
+        })
 
-        setUseData({...useData, [property]: value})
-        validate({...useData, [property]: value}, errors, setErrors)
+        setErrors(
+            validate({
+                ...useData,
+                [event.target.name]: event.target.value
+            })
+        )
+    }
 
-    };
-//     const [errors, setErrors] = useState({});
-// const handleChange = (event) => {
-// 		setUserData({
-// 			...userData,
-// 			[event.target.name]: event.target.value,
-// 		});
-// 		setErrors(
-// 			validate({
-// 				...userData,
-// 				[event.target.name]: event.target.value,
-// 			})
-// 		);
-// 	};
 
 const submitHandler= (event)=>{
     event.preventDefault();
     login(useData);
-    console.log(event)
+    
 }
 
 
@@ -51,7 +41,7 @@ const submitHandler= (event)=>{
             <div className={style.separador1}>
                 <label htmlFor='email' >Email</label>
                 <input type='text' name='email' value={useData.email} onChange={handleChange} />
-                <p>{errors.email}</p>
+                <p className={style.errorEmail}>{errors.email}</p>
             </div>
             <div className={style.separador2}>
                 <label htmlFor='password'>Password</label>

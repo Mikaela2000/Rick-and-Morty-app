@@ -1,3 +1,7 @@
 .contenedor{
     padding-top: 10%;
 }
+.imagen{
+    width: 500px;
+    border-radius: 50%, 50%;
+}
