@@ -10,20 +10,26 @@
 }
 
 .contenedor2 {
+
     margin-left: 250px;
 }
 
 .imagen {
     position: absolute;
-    top: 120px;
-    right: 13px;
-    width: 400px;
+    top: 165px;
+    right: 100px;
+    width: 300px;
+    border-radius: 50%;
+    border: solid 13px rgb(46, 85, 55);
+    /* width: 100%; */
+    border-right: 0;
+
 }
 
-
+/* 
 img {
     border-radius: 40% 0 0 40%;
     border: solid 13px black;
     width: 100%;
     border-right: 0;
-}
+} */

@@ -26,11 +26,11 @@ describe("Test de RUTAS: ", () => {
 
 xdescribe("GET /rickandmorty/login", () => {
     it("Login funciona con email y password correctas.", async () => {
-        const res = (await agent.get("/rickandmorty/?email=nicolasfont15@gmail.com&password=nicolas461")).body
+        const res = (await agent.get("/rickandmorty/?email=mika@gmail.com&password=123456")).body
         expect(res.access).toEqual(true)
     })
     it("Login no funciona con email y password incorrectas.", async () => {
-        const res = (await agent.get("/rickandmorty/?email=nahuelbustos@gmail.com&password=belgranohijoeterno")).body
+        const res = (await agent.get("/rickandmorty/?email=ndsadsads@gmail.com&password=holasoymika4")).body
         expect(res.access).toEqual(false)
     })
 })

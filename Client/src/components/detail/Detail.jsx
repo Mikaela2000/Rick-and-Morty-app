@@ -21,8 +21,8 @@ const Detail = () => {
 
     return (
         <div  className={style.contenedor}>
-            <div className={style.imagen}>
-            <img src={character.image && character.image} alt="" />
+            <div className={style.imagen1}>
+            <img className={style.imagen}src={character.image && character.image} alt="" />
             </div>
             <div className={style.contenedor2}>
             <h1>Name:" {character.name && character.name}"</h1>

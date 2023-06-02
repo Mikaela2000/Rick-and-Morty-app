@@ -32,7 +32,7 @@ function App() {
           window.alert('¡Ya ingresaste un personaje con este ID!');
         } else if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
-        } else {
+        } else  {
           window.alert('¡No hay personajes con este ID!');
         }
       } catch (error) {

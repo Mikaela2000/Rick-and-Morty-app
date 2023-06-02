@@ -48,7 +48,7 @@ const submitHandler= (event)=>{
                 <input type='password' name='password' value={useData.password} onChange={handleChange} placeholder="6+ caracteres"/>
                 <p>{errors.password}</p>
             </div>
-                <button  className={style.button}>Submmit</button>
+                <button  className={style.button}>Submit</button>
             </div>
         </form>
     )
